@@ -13,8 +13,11 @@
   <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
 
   <!-- Update title and description for a birthday theme -->
-  <title>HBD 5.0 | Aoudumber Bade</title>
-  <link rel="icon" type="image/x-icon" href="https://www.palingit.com/favicon.ico" />
+  <title>2.0 | Birthday Made By Your Honey</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/love/images/Favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/love/images/Favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/love/images/Favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <meta name="description" content="A special birthday greeting" />
 </head>
 
@@ -56,7 +59,7 @@
         </p>
 
         <!-- Message -->
-        <p id="pesan1">Tap here for your birthday surprise! 🎉</p>
+        <p id="pesan1">Get ready for your birthday surprise! 🎉</p>
         <div id="kolombaru">
           <li id="lv1">🎂</li>
           <li id="lv2">🎁</li>
@@ -127,19 +130,24 @@
     };
 
     async function inipesan() {
-      var { value: nama } = await swals.fire({
-        title: "What's your beautiful name?",
-        input: "text",
+      var { isConfirmed: isJanvi } = await swals.fire({
+        title: "Are you Janvi? My Cutie Baccha🙈",
+        text: "Please confirm your identity to continue with the birthday surprise!",
+        showCancelButton: true,
+        confirmButtonText: "Yes, I'm Janvi! 💖",
+        cancelButtonText: "No, I'm not",
+        imageUrl: "" + fotostiker5.src,
       });
-      if (nama && nama.length < 11) {
-        window.nama = nama;
-        vketikhalo = "Happy Birthday, " + nama + "!";
+      if (isJanvi) {
+        window.nama = "Janvi";
+        vketikhalo = "Happy Birthday, Janvi!";
         mulainama();
       } else {
         await Swal.fire({
-          title: "Your name is lovely, but it seems a bit long.",
-          text: "Please enter a shorter name.",
+          title: "Oops! This birthday surprise is specially made for Janvi!",
+          text: "Please make sure you're the right person to enjoy this special celebration.",
           icon: "warning",
+          confirmButtonText: "Let me try again",
         });
         inipesan();
       }

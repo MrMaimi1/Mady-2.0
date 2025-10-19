@@ -111,10 +111,19 @@ function aktiopsL() {
   opsL.style.opacity = ".8";
   opsLclick = 1;
   opsLcheck += 1;
+  
+  // Auto-click after a longer delay for better experience
+  if (opsLcheck <= 2) {
+    setTimeout(() => {
+      if (opsLclick == 1) {
+        document.getElementById("bq").onclick();
+      }
+    }, 4000);
+  }
 }
 
 function gantiopsL() {
-  opsL.innerHTML = "[ Tap one of the birthday icons! ]";
+  opsL.innerHTML = "[ Watch the magic happen! ]";
   opsL.style.opacity = ".8";
 }
 
@@ -130,6 +139,18 @@ function otolanj() {
 function aktipesan1() {
   kalimat.innerHTML = pesan1.innerHTML;
   kolombaru.style = "position:relative;opacity:1;transform:scale(1);";
+  // Auto-click all icons after a longer delay to make it more enjoyable
+  setTimeout(() => {
+    autoClickIcons();
+  }, 3000);
+}
+
+function autoClickIcons() {
+  // Automatically click all 4 icons with a longer delay between each for better experience
+  setTimeout(() => { if (lv1.onclick) lv1.onclick(); }, 500);
+  setTimeout(() => { if (lv2.onclick) lv2.onclick(); }, 1000);
+  setTimeout(() => { if (lv3.onclick) lv3.onclick(); }, 1500);
+  setTimeout(() => { if (lv4.onclick) lv4.onclick(); }, 2000);
 }
 
 vketik2 = pesan2.innerHTML;
