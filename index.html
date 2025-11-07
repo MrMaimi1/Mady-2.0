@@ -30,6 +30,21 @@
     <img src="" id="wallpaper" />
   </div>
 
+  <!-- Floating Hearts Animation -->
+  <div class="floating-hearts">
+    <div class="heart heart-1">💖</div>
+    <div class="heart heart-2">💝</div>
+    <div class="heart heart-3">💕</div>
+    <div class="heart heart-4">💗</div>
+    <div class="heart heart-5">💓</div>
+    <div class="heart heart-6">💖</div>
+    <div class="heart heart-7">💝</div>
+    <div class="heart heart-8">💕</div>
+  </div>
+
+  <!-- Confetti Container -->
+  <div class="confetti-container" id="confetti-container"></div>
+
   <div id="Content">
     <div id="kadoIn">
       <!-- Gift Button -->
@@ -95,6 +110,27 @@
   </div>
 
   <script>
+    // Confetti Burst Effect
+    function createConfetti() {
+      const confettiContainer = document.getElementById('confetti-container');
+      const colors = ['#ff6b9d', '#ff9a56', '#ffad56', '#fb3569', '#3fb36b', '#ff217d'];
+      
+      for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 3 + 's';
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        confettiContainer.appendChild(confetti);
+      }
+      
+      // Remove confetti after animation
+      setTimeout(() => {
+        confettiContainer.innerHTML = '';
+      }, 5000);
+    }
+
     // Main script remains similar; further changes are made in a.js if needed.
     const body = document.querySelector("body");
     const swalst = Swal.mixin({
@@ -118,6 +154,9 @@
 
     document.getElementById("kadoIn").onclick = function () {
       if (fungsiAwal == 0) {
+        // Trigger confetti burst immediately when gift is clicked
+        createConfetti();
+        
         audio.play();
         fungsiAwal = 1;
         kadoIn.style =
@@ -131,16 +170,16 @@
 
     async function inipesan() {
       var { isConfirmed: isJanvi } = await swals.fire({
-        title: "Are you Janvi? My Cutie Baccha🙈",
+        title: "Are you Madylin? Most Adorble and Cute One🙈",
         text: "Please confirm your identity to continue with the birthday surprise!",
         showCancelButton: true,
-        confirmButtonText: "Yes, I'm Janvi! 💖",
+        confirmButtonText: "Yes, I'm Madylin! 💖",
         cancelButtonText: "No, I'm not",
         imageUrl: "" + fotostiker5.src,
       });
       if (isJanvi) {
-        window.nama = "Janvi";
-        vketikhalo = "Happy Birthday, Janvi!";
+        window.nama = "Madylin";
+        vketikhalo = "Happy Birthday, Madylin!";
         mulainama();
       } else {
         await Swal.fire({

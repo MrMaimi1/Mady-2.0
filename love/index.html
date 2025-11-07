@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Janvi</title>
+    <title>Happy Birthday Madylin</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/love/images/Favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/love/images/Favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/love/images/Favicon/favicon-16x16.png">
@@ -15,6 +15,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Floating Hearts for Love Page -->
+    <div class="floating-hearts-love">
+        <div class="heart-love heart-love-1">💖</div>
+        <div class="heart-love heart-love-2">💝</div>
+        <div class="heart-love heart-love-3">💕</div>
+        <div class="heart-love heart-love-4">💗</div>
+        <div class="heart-love heart-love-5">💓</div>
+        <div class="heart-love heart-love-6">💖</div>
+    </div>
+
     <div id="drag-container">
         <div id="spin-container">
             <img src="./images/r1.png" alt="">
@@ -27,15 +37,12 @@
             <img src="./images/r8.png" alt="">
             <img src="./images/r9.png" alt="">
             <img src="./images/r10.png" alt="">
-            <p>Happy Birthday Janvi</p>
+            <p class="birthday-message">Happy Birthday Madylin</p>
         </div>
         <div id="ground"></div>
     </div>
     
     <div id="music-container"></div>
-    <!-- <div id="canva">
-        <canvas id="canvas"></canvas>
-    </div> -->
 
     <!-- Audio tự động phát -->
     <audio id="myAudio" autoplay playsinline>
@@ -50,7 +57,7 @@
             var audio = document.getElementById("myAudio");
             audio.muted = false;
             audio.play().catch(function(e) {
-                console.log('Audio playback failed:', e);
+                // Audio playback failed silently
             });
 
             // Hiệu ứng pháo hoa và trái tim

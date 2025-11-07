@@ -1,11 +1,11 @@
-# 🎉 Happy Birthday Janvi - Interactive Surprise Website
+# 🎉 Happy Birthday Madylin - Interactive Surprise Website
 
-A beautiful, interactive birthday surprise website created with love for Janvi. This project features a personalized birthday experience with animations, music, and a special 3D photo gallery.
+A beautiful, interactive birthday surprise website created with love for Madylin. This project features a personalized birthday experience with animations, music, and a special 3D photo gallery.
 
 ## ✨ Features
 
 ### 🎁 **Main Birthday Page**
-- **Personalized Experience**: Asks "Are you Janvi? My Cutie Baccha🙈" for a special touch
+- **Personalized Experience**: Asks "Are you Madylin? Most Adorble and Cute One🙈" for a special touch
 - **Interactive Gift Box**: Click to reveal the birthday surprise
 - **Smooth Animations**: Auto-progressing birthday messages with perfect timing
 - **Background Music**: Plays automatically when the gift is opened
@@ -13,7 +13,7 @@ A beautiful, interactive birthday surprise website created with love for Janvi. 
 
 ### 💖 **3D Photo Gallery**
 - **Rotating Photo Display**: Interactive 3D carousel with photos
-- **"Happy Birthday Janvi" Message**: Personalized birthday greeting
+- **"Happy Birthday Madylin" Message**: Personalized birthday greeting
 - **Smooth Transitions**: Beautiful animations and effects
 - **Background Music**: Special love song plays automatically
 
@@ -79,7 +79,7 @@ HAPPY-BIRTHDAY-V5/
 
 ### **User Journey:**
 1. **Landing**: User sees a beautiful gift box with "Open the gift, cutie:3"
-2. **Identity Check**: Asks "Are you Janvi? My Cutie Baccha🙈" with Yes/No options
+2. **Identity Check**: Asks "Are you Madylin? Most Adorble and Cute One🙈" with Yes/No options
 3. **Gift Opening**: Clicking the gift box starts the birthday celebration
 4. **Interactive Messages**: Auto-progressing birthday messages with smooth timing
 5. **Photo Gallery**: Transitions to 3D rotating photo gallery
@@ -98,7 +98,7 @@ HAPPY-BIRTHDAY-V5/
 1. **Change the name** in `index.html`:
    ```javascript
    // Line 130: Update the question
-   title: "Are you [NAME]? My Cutie Baccha🙈",
+   title: "Are you [NAME]? Most Adorble and Cute One🙈",
    
    // Line 136: Update the greeting
    vketikhalo = "Happy Birthday, [NAME]!";
@@ -176,10 +176,10 @@ This project is created with love for a special birthday celebration. Feel free 
 
 ## 💖 Made With Love
 
-Created with ❤️ for Janvi's special day. Every detail was crafted to make this birthday celebration truly memorable and magical.
+Created with ❤️ for Madylin's special day. Every detail was crafted to make this birthday celebration truly memorable and magical.
 
 ---
 
-**Happy Birthday, Janvi! 🎂✨**
+**Happy Birthday, Madylin! 🎂✨**
 
 *May this special day be filled with joy, love, and wonderful memories!*
