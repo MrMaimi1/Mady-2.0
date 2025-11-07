@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5" name="viewport" />
@@ -14,10 +14,10 @@
 
   <!-- Update title and description for a birthday theme -->
   <title>2.0 | Birthday Made By Your Honey</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/love/images/Favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/love/images/Favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/love/images/Favicon/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="./love/images/Favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./love/images/Favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./love/images/Favicon/favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
   <meta name="description" content="A special birthday greeting" />
 </head>
 
@@ -157,7 +157,29 @@
         // Trigger confetti burst immediately when gift is clicked
         createConfetti();
         
-        audio.play();
+        // Enhanced autoplay for Chrome compatibility
+        const playAudio = async () => {
+          try {
+            // Start with muted audio first (Chrome allows this)
+            audio.muted = true;
+            await audio.play();
+            
+            // Unmute after a brief delay
+            setTimeout(() => {
+              audio.muted = false;
+              audio.volume = 0.8;
+            }, 100);
+            
+          } catch (error) {
+            // Fallback: play on next click
+            document.addEventListener('click', () => {
+              audio.muted = false;
+              audio.play().catch(e => {});
+            }, { once: true });
+          }
+        };
+        
+        playAudio();
         fungsiAwal = 1;
         kadoIn.style =
           "transition:all .8s ease;transform:scale(10);opacity:0";
@@ -169,21 +191,21 @@
     };
 
     async function inipesan() {
-      var { isConfirmed: isJanvi } = await swals.fire({
-        title: "Are you Madylin? Most Adorble and Cute One🙈",
+      var { isConfirmed: isMadylin } = await swals.fire({
+        title: "Are you Madylin? Most Adorable and Cute One🙈",
         text: "Please confirm your identity to continue with the birthday surprise!",
         showCancelButton: true,
         confirmButtonText: "Yes, I'm Madylin! 💖",
         cancelButtonText: "No, I'm not",
         imageUrl: "" + fotostiker5.src,
       });
-      if (isJanvi) {
+      if (isMadylin) {
         window.nama = "Madylin";
         vketikhalo = "Happy Birthday, Madylin!";
         mulainama();
       } else {
         await Swal.fire({
-          title: "Oops! This birthday surprise is specially made for Janvi!",
+          title: "Oops! This birthday surprise is specially made for Madylin!",
           text: "Please make sure you're the right person to enjoy this special celebration.",
           icon: "warning",
           confirmButtonText: "Let me try again",

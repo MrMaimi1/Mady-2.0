@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Happy Birthday Madylin</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/love/images/Favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/love/images/Favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/love/images/Favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/Favicon/favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <meta name="description" content="Happy Birthday Madylin - A special 3D photo gallery with music">
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Canvas for fireworks and hearts effects -->
+    <canvas id="canvas" width="800" height="600"></canvas>
+    
     <!-- Floating Hearts for Love Page -->
     <div class="floating-hearts-love">
         <div class="heart-love heart-love-1">💖</div>
@@ -27,40 +31,57 @@
 
     <div id="drag-container">
         <div id="spin-container">
-            <img src="./images/r1.png" alt="">
-            <img src="./images/r2.png" alt="">
-            <img src="./images/r3.png" alt="">
-            <img src="./images/r4.png" alt="">
-            <img src="./images/r5.png" alt="">
-            <img src="./images/r6.png" alt="">
-            <img src="./images/r7.png" alt="">
-            <img src="./images/r8.png" alt="">
-            <img src="./images/r9.png" alt="">
-            <img src="./images/r10.png" alt="">
+            <img src="./images/r1.png" alt="Birthday memory 1">
+            <img src="./images/r2.png" alt="Birthday memory 2">
+            <img src="./images/r3.png" alt="Birthday memory 3">
+            <img src="./images/r4.png" alt="Birthday memory 4">
+            <img src="./images/r5.png" alt="Birthday memory 5">
+            <img src="./images/r6.png" alt="Birthday memory 6">
+            <img src="./images/r7.png" alt="Birthday memory 7">
+            <img src="./images/r8.png" alt="Birthday memory 8">
+            <img src="./images/r9.png" alt="Birthday memory 9">
+            <img src="./images/r10.png" alt="Birthday memory 10">
             <p class="birthday-message">Happy Birthday Madylin</p>
         </div>
         <div id="ground"></div>
     </div>
     
-    <div id="music-container"></div>
+    <!-- Spotify-style Music Player -->
+    <div class="spotify-player">
+        <div class="song-info">
+            <div class="song-title">Happy Birthday Song</div>
+            <div class="song-artist">For Madylin 💕</div>
+        </div>
+        <div class="player-controls">
+            <button id="prevBtn" class="control-btn">⏮️</button>
+            <button id="playPauseBtn" class="play-pause-btn">▶️</button>
+            <button id="nextBtn" class="control-btn">⏭️</button>
+        </div>
+        <div class="progress-container">
+            <span class="time-display" id="currentTime">0:00</span>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progressFill"></div>
+                <input type="range" class="progress-slider" id="progressSlider" min="0" max="100" value="0">
+            </div>
+            <span class="time-display" id="totalTime">0:00</span>
+        </div>
+        <div class="volume-container">
+            <span class="volume-icon">🔊</span>
+            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
+        </div>
+    </div>
 
-    <!-- Audio tự động phát -->
-    <audio id="myAudio" autoplay playsinline>
-        <source src="music/setlove.mp3" type="audio/mpeg">
-        <source src="music/setlove.ogg" type="audio/ogg">
+    <!-- Audio Element -->
+    <audio id="myAudio" loop playsinline>
+        <source src="./music/setlove.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
 
     <script src="main.js"></script>
 
     <script>
         window.onload = function() {
-            var audio = document.getElementById("myAudio");
-            audio.muted = false;
-            audio.play().catch(function(e) {
-                // Audio playback failed silently
-            });
-
-            // Hiệu ứng pháo hoa và trái tim
+            // Canvas effects for fireworks and hearts
             const canvas = document.getElementById("canvas");
             const ctx = canvas.getContext("2d");
             canvas.width = window.innerWidth;
@@ -149,6 +170,8 @@
                 requestAnimationFrame(animate);
             }
             animate();
+            
+
         };
     </script>
 </body>
